@@ -1,0 +1,184 @@
+---
+title: "Workflows"
+description: "How to configure Alex workflows to automate invitations, reminders, status updates, and decisions for candidates across ATS and non-ATS flows."
+---
+
+## Overview
+
+Workflows define the end-to-end journey a candidate takes, from their first invite through the final hiring decision. They control:
+
+- How and when candidates are invited
+- Which messages they receive (texts, calls, emails)
+- How status changes are logged
+- When recruiters are notified
+- How ATS fields are updated
+
+## ATS vs. non-ATS workflows
+
+- **Without ATS integration** – You’ll see a single branch. This branch represents candidates invited directly from Alex (for example, via invite link or **Invite Candidates** button).
+- **With ATS integration** – You’ll see two branches:
+  - Left branch: Candidates invited directly from Alex or via manually shared links.
+  - Right branch: Candidates invited automatically from your ATS.
+
+Each branch has its own configuration so you can personalize the journey based on candidate source.
+
+## Workflow tutorial
+
+Use the steps in the workflow builder to configure each stage of the candidate journey.
+
+### 1. Start
+
+#### Blackout period (phone interviews only)
+
+The blackout period prevents Alex from calling or texting candidates during off-hours:
+
+- Alex only sends initial calls or texts during your configured window (shown in green).
+- The candidate’s local timezone is inferred from their phone’s area code.
+- If someone applies overnight, their invite waits until the next available window.
+
+Note: If candidates text Alex themselves, Alex will respond right away. The blackout period only affects outbound calls and texts.
+
+#### Shared notifications for completed interviews (Bullhorn only)
+
+You can configure multiple recipients to be notified when interviews are completed. Notifications can be routed using fields such as:
+
+- `JobOrder`: `owner`, `responseUser`
+- `Candidate`: `owner`, `linkedPerson`
+
+This ensures the right recruiters stay informed, even in team-based setups.
+
+### 2. Submission / Default
+
+This step triggers when a candidate is invited to an interview.
+
+- **Without ATS** – No extra setup required.
+- **With ATS** – Additional configuration appears to control auto-invites and logging.
+
+#### ATS-specific settings (right branch)
+
+You can configure:
+
+- **Invitation rules** – Filters that determine which candidates should automatically receive interview invites (for example, by role, location, or other criteria).
+- **Resume fit threshold** – Minimum resume fit score required before sending an invite (where resume data is available).
+- **Update candidate field** – Automatically log a custom message in the ATS activity field.
+- **Upload resume fit score** – Store the fit score in a designated ATS field when an invite is sent.
+- **Note actions** – Add custom notes in the ATS when the candidate is invited.
+- **One interview per candidate** – Prevent multiple invites if the candidate applies to several roles; they only receive one interview per day.
+- **Invitation delay** – Add a delay between the trigger event and when the invite is sent (beyond the built-in default delay).
+
+#### Outbound outreach workflows
+
+If you do outbound sourcing and send interview links to candidates who haven’t applied through the ATS:
+
+- Enable **Auto Match Candidates** in the **Default** node on the left branch.
+- This automatically creates candidate records and job submissions in your ATS once candidates complete their interviews.
+
+### 3. Outreach
+
+Use this step to manage invites and reminders.
+
+1. **Create the invite**
+   - In the **Outreach** step, click **Add Invitation**.
+   - If a phone number is set up, you can send both text and email invites.
+   - Without a phone number, only email is available.
+   - Customize the message to match your brand’s voice.
+2. **Add reminders**
+   - Add one or more reminders under the invite.
+   - Reminders can be sent via text, call, or email.
+   - Configure them for specific offsets (for example, X hours or days after the invite).
+   - Reminders stop automatically once the candidate schedules or completes the interview.
+
+#### Determining phone vs. video interviews
+
+Whether a candidate takes a phone or video interview depends on how they engage with your outreach:
+
+1. **Email = always video**
+   - Email invites and reminders always contain a video link, so they direct candidates to a video interview.
+   - Phone interviews cannot be scheduled via email.
+2. **Text = depends on the presence of a video link**
+   - Text with a video link → leads to a video interview.
+   - Text without a video link → leads to a phone interview.
+3. **Mixed outreach (email + text)**
+   - When both channels exist, whichever message the candidate acts on first determines the interview type.
+
+Decision summary:
+
+- Email invite or reminder → Video
+- Text + video link → Video
+- Text without video link → Phone
+
+Best practice: Decide on your preferred interview type upfront and keep messaging consistent to avoid splitting candidates between phone and video flows.
+
+### 4. Progress
+
+The **Progress** step tracks the time from invite to completion and can trigger actions based on status:
+
+- **SCHEDULED** – Automatically log notes or update ATS fields when a candidate schedules an interview.
+- **MISSED** – Log notes, update ATS fields, and optionally send follow-up emails when interviews are missed.
+
+These automations keep your ATS up to date and reduce manual tracking.
+
+### 5. Complete
+
+This step is triggered once the candidate finishes the interview.
+
+You can configure:
+
+- **Candidate emails** – Confirmation or next-step messages (for example, thanking them for completing the interview).
+- **Recruiter emails** – Notifications when interviews are completed.
+
+#### Additional options
+
+1. **Multi-recipient notifications (Bullhorn only)**
+   - Notify multiple recruiters instead of just the job creator.
+   - Use fields such as:
+     - `JobOrder`: `owner`, `responseUser`
+     - `Candidate`: `owner`, `linkedPerson`
+2. **Score threshold for notifications**
+   - Only candidates above a specified score (for example, 80) trigger recruiter emails.
+   - This controls who gets notified, not the content of the emails.
+
+#### ATS-specific settings (Complete step)
+
+You can configure automatic ATS updates when interviews complete:
+
+- **Update field** – Write a custom value to an ATS activity field.
+- **Upload interview score** – Store the overall interview score in a dedicated ATS field.
+- **Upload report PDF** – Attach the full report PDF to the candidate’s ATS profile.
+- **Upload question summary** – Store a structured summary of the candidate’s answers.
+- **Note action** – Create a custom note describing the completion.
+
+### 6. Decision (optional)
+
+Use the **Decision** step to automate what happens when you shortlist or reject candidates in Alex:
+
+- Optionally send email or SMS notifications when candidates are shortlisted or rejected.
+- Customize templates to fit your tone and process.
+
+For Bullhorn users:
+
+- Alex can create note actions or update fields when candidates are shortlisted or rejected, so the ATS reflects the decision made in Alex.
+
+Important limitations:
+
+- For ATSs other than Bullhorn, decisions made in the ATS do not sync back to Alex.
+- Decisions made in Alex can trigger notifications, but not every ATS supports mirrored status updates.
+
+## Important note on workflows
+
+If you manually copy and send interview or scheduling links outside Alex (for example, a bare link in email or chat), the candidate bypasses parts of your workflow. That means:
+
+- They may not receive automated reminders or completion emails.
+- ATS updates may not run as expected.
+
+To keep everything in sync:
+
+- Add candidates via the **Invite Candidates** button in Alex, or
+- Route them through ATS-based automations.
+
+If you need to share links during outbound outreach, enabling **Auto Match Candidates** ensures that completed interviews still create candidate records in Bullhorn and keep your system of record accurate.
+
+## Stay tuned
+
+Workflows are evolving quickly. Expect additional steps, options, and integrations to appear over time. Check this page periodically for the latest capabilities and configuration tips.
+

@@ -16,9 +16,18 @@
           {
             "group": "Getting started",
             "pages": [
-              "index",
+              "welcome",
               "quickstart",
               "development"
+            ]
+          },
+          {
+            "group": "Alex interviews",
+            "pages": [
+              "interviews/create",
+              "interviews/workflows",
+              "interviews/settings",
+              "interviews/cheatdetection"
             ]
           },
           {
