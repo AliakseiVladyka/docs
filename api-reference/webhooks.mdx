@@ -1,0 +1,40 @@
+---
+title: "Webhooks"
+description: "How to configure Alex webhooks and handle real-time session events like started, completed, shortlisted, and rejected."
+---
+
+## Introduction
+
+Webhooks let Alex notify your systems in real time when important events occur, such as candidates starting or completing interviews.
+
+When a configured event fires, Alex sends an HTTP `POST` request to your webhook URL with a JSON payload describing the event.
+
+To configure webhooks:
+
+1. Log into your Alex dashboard.
+2. Go to **Settings → Integrations → Alex API** (or the equivalent webhook settings area).
+3. Add the URL where Alex should send webhook notifications.
+
+## Webhook events
+
+Each event type has a specific payload schema (see the full docs for details). Alex references completed interviews by `reportId`, which corresponds to the `reportId` returned by the Reports API.
+
+The following events are available:
+
+- `session.started` – Triggered when a candidate enters the room with Alex and starts (or resumes) an interview.
+- `session.paused` – Sent when a candidate leaves an interview mid-way or the interview is interrupted.
+- `session.ended` – Triggered when the conversation with Alex reaches the end of the interview and the candidate can no longer continue.
+- `session.completed` – Triggered when the interview has fully processed and the report is ready.
+- `session.shortlisted` – Fired when a candidate is marked as shortlisted in Alex.
+- `session.rejected` – Fired when a candidate is marked as rejected in Alex.
+
+## Handling webhooks
+
+When receiving webhooks, your endpoint should:
+
+1. Verify authenticity (for example, via a shared secret or signature header if configured).
+2. Return a `2xx` status quickly (for example, `200 OK`) to acknowledge receipt.
+3. Perform any heavy work asynchronously (queue processing, send emails, update internal systems, and so on).
+
+If your endpoint returns a non-2xx status, Alex may retry delivery according to its retry policy.
+

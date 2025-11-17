@@ -1,0 +1,104 @@
+---
+title: "Resume Fit"
+description: "Describes how Resume Fit evaluates candidates’ resumes against job requirements, how it works with and without an ATS, and how to configure thresholds and scoring rules."
+---
+
+## Resume Fit
+
+Resume Fit automatically evaluates how well a candidate’s resume lines up with the requirements of a job. It’s designed to improve candidate quality by using thresholds so only applicants who meet a baseline level of fit move forward. You can also customize the evaluation criteria so the scoring reflects the specific needs of each role.
+
+## For ATS-connected accounts
+
+If your account is connected to an ATS, resumes are pulled in and evaluated automatically as candidates apply. The feature currently supports ATS integrations such as:
+
+- Bullhorn
+- Avionte
+- Ceipal
+- Tracker
+- Loxo
+- JobDiva
+- Manatal
+- Salesforce
+
+In these setups, Resume Fit runs in the background and scores candidates based on the job’s requirements.
+
+## For non-ATS connected accounts
+
+You can still use Resume Fit even without an ATS integration:
+
+- **Manual upload** – Upload resumes directly to the candidate’s profile so they can be scored.
+- **Required resume upload** – Require candidates to upload a resume during the interview by going to **Interview Kit → Advanced Settings → Form Inputs** and turning resume upload on.
+
+## Viewing Resume Fit details
+
+To see the Resume Fit details for a particular role:
+
+1. Open the **Jobs** tab.
+2. Select the job you’re interested in.
+3. Locate the **Resume Fit Score** column in the candidate list.
+4. Hover over the score to see a detailed breakdown of the evaluation.
+
+This view helps you quickly understand why a candidate received a particular score.
+
+## Customizing Resume Fit evaluation
+
+You can tune how Resume Fit works for each job.
+
+### Adjust minimum requirements
+
+- Go to **Interview Kit → Advanced Settings → Resume Fit Minimum Requirements**.
+- Review the automatically generated requirements and remove any that don’t apply using the trash icon.
+- Add new requirements with the **Add Requirement** button.
+
+These requirements define the dimensions that the candidate is scored against.
+
+### Set a threshold (ATS only)
+
+In ATS-connected workflows, you can set a Resume Fit threshold in the **Workflows** view, inside the **New Submission** node on the ATS (right-hand) branch.
+
+- Candidates whose Resume Fit score falls below this threshold will not be automatically invited to interviews.
+
+## Resume Fit score analysis breakdown
+
+The detailed Resume Fit analysis includes several key sections:
+
+- **Current role and summary of experience** – A short overview summarizing the candidate’s background and how it relates to the job.
+- **Resume Fit score** – A single score, typically shown in the top-right, representing the average of the scores across all minimum requirements.
+- **Minimum requirements breakdown** – A table describing how the candidate performed against each requirement, including:
+  - **Minimum requirement** – The specific requirement being evaluated.
+  - **Score (out of 100)** – How closely the candidate meets that requirement.
+  - **Evidence** – Highlights from the resume that support the score.
+  - **Gap** – Where the candidate falls short relative to the requirement.
+  - **Transferable** – Whether the candidate has related skills or experience that may partially offset gaps.
+
+You’ll also see:
+
+- **Key fit points** – A summary of the candidate’s strengths and positive signals of fit.
+- **Areas for discussion** – Items that might require follow-up questions or additional scrutiny.
+- **Resume attachment** – The candidate’s resume attached or visible at the bottom of the analysis.
+
+## Resume Fit score instructions
+
+You can further refine how scoring works by adding **Resume Fit Score Instructions**. These let you specify rules about must-have qualifications, deal breakers, and scoring adjustments, so the automated evaluation reflects your preferences.
+
+### How it works
+
+Within the instructions area, you can define guidelines like:
+
+1. **Go-no-go requirements**
+   - Define critical criteria that candidates must meet to receive a strong score.
+   - Example: If a candidate lacks a minimum number of years of experience in a key skill, their score cannot exceed a specified threshold (for example, they can’t score above 10 in that category).
+2. **Scoring adjustments**
+   - Adjust scores based on work history patterns.
+   - Example: Deduct points for frequent job changes (for example, more than three jobs within a year) or short average tenure.
+   - Example: Reduce the overall fit score if average tenure across roles is below a certain number of years.
+3. **Additional contextual factors**
+   - Add rules for extra positive or negative signals that matter to your team.
+   - Example: Add a bonus to the score if the candidate holds specific certifications that are valuable for the role.
+
+These instructions are managed in the **Advanced Settings** section of the Interview Kit, under the Resume Fit configuration. They help ensure the automated score aligns with how your organization wants to evaluate candidates.
+
+## Future enhancements
+
+The Resume Fit feature is actively being improved, with more customization and analysis options planned. Expect additional controls and tuning options to appear over time.
+

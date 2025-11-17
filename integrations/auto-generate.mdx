@@ -1,0 +1,61 @@
+---
+title: "Auto Job Generation"
+description: "How to enable and configure automatic job generation so Alex creates interviews from new ATS requisitions."
+---
+
+## Auto Job Generation
+
+Auto Job Generation lets Alex automatically create jobs and interviews whenever new requisitions are added to your ATS. Combined with workflow-based invitations, this can make your AI interviews run almost entirely on autopilot.
+
+You can enable and configure this feature from **Settings → Auto Job Gen** in the Alex app.
+
+## Getting started
+
+To turn on Auto Job Generation:
+
+1. Go to **Settings** in Alex.
+2. Click **Auto Job Gen** in the left-hand navigation.
+3. Toggle the feature **On** to reveal configuration options.
+
+Once enabled, Alex will:
+
+- Listen for new jobs from supported ATS integrations.
+- Create matching jobs in Alex using your default settings.
+- Optionally start inviting candidates automatically via your configured workflows.
+
+## Core settings
+
+After enabling the toggle, review and set:
+
+- **Default job type** – Choose Video or Phone as the default modality for auto-generated jobs (based on what your subscription supports).
+- **Default creation template** – Select the interview template used to build new interviews from each job’s description.
+- **Default messaging** – Choose the messaging template used for invitations for auto-generated jobs. You can still adjust messaging per job later.
+- **Default workflow** – Select which workflow should handle candidates for these auto-generated jobs (see the Workflows page for details).
+- **On create update field (optional)** – Choose a field in your ATS to update when Alex creates a job (for example, set a field to “AI Interview Created”).
+
+## Job generation filters
+
+Filters control which ATS jobs result in auto-generated Alex jobs, so you don’t flood the system with test or low-priority roles.
+
+To configure:
+
+1. Click **Add Filter**.
+2. Choose whether this filter is part of an AND group or an OR group.
+3. Select the entity to filter on (for example, `JobOrder` or `ClientCorporation`).
+4. Choose a field and condition (for example, “Job status is Open”, “Client is not Internal”).
+
+Use filters to:
+
+- Exclude internal or test jobs.
+- Limit auto-generation to specific departments or brands.
+- Only generate jobs when status is set to a particular state.
+
+## Job generation field mappings
+
+Field mappings let you pass additional job data into Alex so the AI interviewer has more context:
+
+- Map ATS fields like seniority, location, compensation band, or employment type.
+- Alex uses these values, along with the job description, when drafting interviews.
+
+Configured mappings help Alex tailor questions and scoring to each role without manual setup.
+

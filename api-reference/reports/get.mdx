@@ -1,0 +1,94 @@
+---
+title: "Get reports"
+description: "Endpoint for listing completed Alex interview reports, with filtering options and full report structure."
+---
+
+## Get reports
+
+Returns a list of completed interview reports. You can filter by `positionId`, `reportId`, or `candidateId`.
+
+- **Method:** `GET`
+- **Path:** `/reports`
+- **Auth:** `X-API-Key` header
+
+## Request
+
+### Endpoint
+
+```http
+GET /reports
+```
+
+### Headers
+
+```http
+X-API-Key: <api-key>
+```
+
+### Query parameters
+
+- `reportId` (`string`, optional) – Filter to a specific report.
+- `candidateId` (`string`, optional) – Filter to reports for a given candidate.
+- `positionId` (`string`, optional) – Filter to reports for a specific position.
+
+### Example cURL
+
+```bash
+curl --request GET \
+  --url https://api.alex.com/v1/api/reports \
+  --header 'X-API-Key: <api-key>'
+```
+
+## Response
+
+On success, returns a JSON array of report objects, for example:
+
+```json
+[
+  {
+    "reportId": "reportId",
+    "candidateId": "candidateId",
+    "positionId": "positionId",
+    "overallScore": 85,
+    "overallFeedback": "The candidate performed well overall.",
+    "questionSummary": [
+      {
+        "question": "What is your favorite color?",
+        "summary": "The candidate's favorite color is blue."
+      }
+    ],
+    "tags": [
+      {
+        "name": "Work Authorization",
+        "value": "Yes",
+        "evidence": "The candidate confirmed they are authorized to work in the United States"
+      }
+    ],
+    "skills": [
+      {
+        "name": "Communication",
+        "score": 85,
+        "feedback": "The candidate communicated clearly and effectively."
+      }
+    ],
+    "timeCompleted": 1620000000,
+    "videoUrl": "https://example.com/video.mp4",
+    "pdfUrl": "https://example.com/report.pdf"
+  }
+]
+```
+
+### Key fields
+
+- `reportId` – Unique identifier for the report.
+- `candidateId` – ID of the candidate this report belongs to.
+- `positionId` – ID of the position the interview was for.
+- `overallScore` – Numeric overall score (for example, 0–100).
+- `overallFeedback` – Text summary of the candidate’s performance.
+- `questionSummary` – List of questions and short summaries of answers.
+- `tags` – Extracted tags like work authorization or location, including evidence text.
+- `skills` – Skill-level scores with feedback (for example, Communication and Problem Solving).
+- `timeCompleted` – UNIX epoch timestamp (seconds) when the interview completed.
+- `videoUrl` – URL to an interview video recording (if available).
+- `pdfUrl` – URL to a downloadable PDF version of the report.
+

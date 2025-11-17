@@ -1,33 +1,51 @@
 ---
-title: 'Introduction'
-description: 'Example section for showcasing API endpoints'
+title: "API introduction"
+description: "Overview of the Alex REST API, including base URL, authentication, and HTTP response codes."
+icon: "terminal"
 ---
 
-<Note>
-  If you're not looking to build API reference documentation, you can delete
-  this section by removing the api-reference folder.
-</Note>
+## Introduction
 
-## Welcome
+The Alex API is a RESTful HTTP API that lets you programmatically access candidates, reports, and positions, and receive webhook notifications.
 
-There are two ways to build API documentation: [OpenAPI](https://mintlify.com/docs/api-playground/openapi/setup) and [MDX components](https://mintlify.com/docs/api-playground/mdx/configuration). For the starter kit, we are using the following OpenAPI specification.
+This page covers the base URL, authentication, and response codes used across all endpoints.
 
-<Card
-  title="Plant Store Endpoints"
-  icon="leaf"
-  href="https://github.com/mintlify/starter/blob/main/api-reference/openapi.json"
->
-  View the OpenAPI specification file
-</Card>
+## Base URL
+
+All API requests must be made over HTTPS to the following base URL:
+
+```text
+https://api.alex.com/v1/api
+```
+
+All endpoints documented under the API reference section are relative to this base.
 
 ## Authentication
 
-All API endpoints are authenticated using Bearer tokens and picked up from the specification file.
+Alex uses an API key for authentication.
 
-```json
-"security": [
-  {
-    "bearerAuth": []
-  }
-]
+- Obtain an API key from your Alex dashboard.
+- Include it on every request with the header:
+
+```http
+X-API-Key: <API-KEY>
 ```
+
+Requests without a valid key (or with an invalid key) will be rejected.
+
+Keep your API key secret. Do not embed it in client-side code or public repositories.
+
+## Response codes
+
+Alex uses standard HTTP status codes:
+
+- **2xx – Request succeeded.** Example:
+  - `200 OK` – The request was successful and data is returned.
+- **4xx – Client-side error.** Examples:
+  - `400 Bad Request` – Invalid or missing parameters.
+  - `401 Unauthorized` – Missing or invalid API key.
+  - `404 Not Found` – The requested resource does not exist.
+- **5xx – Server-side error.** Example:
+  - `500 Internal Server Error` – An unexpected error occurred on Alex’s side.
+
+Check the response body for additional error details where provided.

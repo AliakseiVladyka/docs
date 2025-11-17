@@ -1,0 +1,67 @@
+---
+title: "Get candidates"
+description: "Endpoint for listing candidates in Alex with optional filtering by candidate, email, or position."
+---
+
+## Get candidates
+
+Returns a list of candidates from Alex. You can optionally filter by `candidateId`, `email`, or `positionId`.
+
+- **Method:** `GET`
+- **Path:** `/candidates`
+- **Auth:** `X-API-Key` header (see API introduction)
+
+## Request
+
+### Endpoint
+
+```http
+GET /candidates
+```
+
+### Headers
+
+```http
+X-API-Key: <api-key>
+```
+
+### Query parameters
+
+- `email` (`string`, optional) – Filter by candidate email.
+- `candidateId` (`string`, optional) – Filter by specific candidate ID.
+- `positionId` (`string`, optional) – Filter to candidates who have been interviewed for the given position.
+
+### Example cURL
+
+```bash
+curl --request GET \
+  --url https://api.alex.com/v1/api/candidates \
+  --header 'X-API-Key: <api-key>'
+```
+
+## Response
+
+On success, returns a JSON array of candidate objects:
+
+```json
+[
+  {
+    "candidateId": "<string>",
+    "email": "<string>",
+    "firstName": "<string>",
+    "lastName": "<string>",
+    "resumeUrl": "<string>"
+  }
+]
+```
+
+### Fields
+
+- `candidateId` – Unique ID of the candidate within Alex.
+- `email` – Candidate’s email address.
+- `firstName` – Candidate’s first name.
+- `lastName` – Candidate’s last name.
+- `resumeUrl` – Public or signed URL pointing to the candidate’s resume, if present.
+
+Error responses use standard HTTP status codes (for example, `400` for invalid input).
+

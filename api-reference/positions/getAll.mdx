@@ -1,0 +1,55 @@
+---
+title: "Get positions"
+description: "Endpoint for listing positions configured in Alex, including position IDs and names."
+---
+
+## Get positions
+
+Returns a list of positions from Alex.
+
+- **Method:** `GET`
+- **Path:** `/positions`
+- **Auth:** `X-API-Key` header
+
+## Request
+
+### Endpoint
+
+```http
+GET /positions
+```
+
+### Headers
+
+```http
+X-API-Key: <api-key>
+```
+
+### Example cURL
+
+```bash
+curl --request GET \
+  --url https://api.alex.com/v1/api/positions \
+  --header 'X-API-Key: <api-key>'
+```
+
+## Response
+
+On success, returns a JSON array of position objects:
+
+```json
+[
+  {
+    "positionId": "<string>",
+    "name": "<string>"
+  }
+]
+```
+
+### Fields
+
+- `positionId` – Unique identifier for the position.
+- `name` – The human-readable name or title of the position.
+
+Use these IDs when filtering other endpoints (for example, **Get candidates** or **Get reports**).
+

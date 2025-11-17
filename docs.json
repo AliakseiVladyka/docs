@@ -27,7 +27,28 @@
               "interviews/create",
               "interviews/workflows",
               "interviews/settings",
-              "interviews/cheatdetection"
+              "interviews/cheatdetection",
+              "interviews/resumefit",
+              "interviews/askalex"
+            ]
+          },
+          {
+            "group": "Technical setup",
+            "pages": [
+              "advanced/domains",
+              "advanced/saml-sso",
+              "advanced/change-log"
+            ]
+          },
+          {
+            "group": "Integrations",
+            "pages": [
+              "integrations/overview",
+              "integrations/auto-generate",
+              "integrations/greenhouse-quickstart",
+              "integrations/lever-quickstart",
+              "integrations/bullhorn-quickstart",
+              "integrations/workday-quickstart"
             ]
           },
           {
@@ -62,7 +83,11 @@
           {
             "group": "API documentation",
             "pages": [
-              "api-reference/introduction"
+              "api-reference/introduction",
+              "api-reference/webhooks",
+              "api-reference/candidates/get",
+              "api-reference/reports/get",
+              "api-reference/positions/getAll"
             ]
           },
           {

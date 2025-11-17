@@ -1,0 +1,94 @@
+---
+title: "SAML SSO"
+description: "Complete guide to implementing SAML 2.0 Single Sign-On between your identity provider and Alex."
+---
+
+## Overview
+
+This guide describes how to set up SAML 2.0 Single Sign-On (SSO) for Alex so your teammates can log in with your organization’s identity provider (IdP) instead of passwords.
+
+SAML SSO centralizes authentication and lets you manage access through your existing identity systems (for example, Okta or Azure AD).
+
+Before you begin, ensure you have admin access to your IdP and can create or configure SAML applications.
+
+## Requirements
+
+To configure SAML SSO you generally need:
+
+- An identity provider that supports SAML 2.0
+- The ability to create a new SAML application or enterprise app
+- Admin access in Alex (to enter SAML settings)
+- Valid X.509 certificates (signing, and optionally encryption) from the IdP
+
+The exact UI and terminology differs by IdP, but the required data is standard SAML configuration.
+
+## Information from the identity provider
+
+From your IdP you will typically collect:
+
+- IdP Entity ID or Issuer
+- Single Sign-On URL (also called Login URL or SAML endpoint)
+- Single Logout URL (if supported)
+- X.509 certificate (for validating signatures)
+
+You’ll paste this information into the SAML configuration section in Alex.
+
+## Information provided by Alex
+
+Alex will provide SAML configuration data you need to paste back into your IdP, such as:
+
+- Service Provider (SP) Entity ID
+- Assertion Consumer Service (ACS) URL (the callback URL where the IdP sends SAML responses)
+- SP-initiated login URL (optional)
+
+Configure these values when creating the Alex SAML app inside your IdP.
+
+## User attributes
+
+Your SAML assertion should at least include:
+
+- Email – primary identifier used to match or provision user accounts
+- First name
+- Last name
+
+Depending on your setup, you may also map:
+
+- Role or group information
+- Department or team metadata
+
+Check the Alex SSO page for any required attribute names (for example, `email`, `given_name`, `family_name`).
+
+## Security requirements
+
+For a secure SSO configuration:
+
+- Sign all SAML assertions with your IdP’s certificate.
+- Use HTTPS for all SSO endpoints.
+- Ensure user attributes come from authoritative directories (for example, HRIS or corporate directory).
+- Optionally encrypt assertions if your security policy requires it.
+
+Alex will validate signatures and compare them to the configured certificate.
+
+## Encryption and signing
+
+Recommended settings:
+
+- **Signing** – Enable signing of SAML responses or assertions (depending on your IdP’s options) using the X.509 certificate you’ve configured.
+- **Encryption (optional)** – If you enable encryption, upload or configure the SP encryption certificate provided by Alex so your IdP can encrypt responses correctly.
+
+### Certificate management
+
+- Track certificate expiration dates and rotate them before they expire.
+- When you rotate, update the certificate in both your IdP and Alex.
+- If you have multiple certificates, ensure the one used for signing is the same one configured in the Alex SAML settings.
+
+## Next steps
+
+Once configuration is complete:
+
+1. Test login with a small group of users before enabling SSO for everyone.
+2. Decide whether to enforce SSO (require SAML for all users) or allow both SSO and password logins.
+3. Document SSO login instructions for your team.
+
+If you encounter errors (for example, invalid signature, mismatch in Entity IDs, or missing attributes), check the SAML logs and error messages on both your IdP and the Alex SSO configuration page.
+
