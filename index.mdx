@@ -1,97 +1,100 @@
 ---
-title: "Introduction"
-description: "Welcome to the new home for your documentation"
+title: "Alex documentation"
+description: "Product documentation for Alex — set up AI interviews, configure workflows, and integrate with your ATS and API."
 ---
 
-## Setting up
+## Welcome
 
-Get your documentation site up and running in minutes.
+This site is the home for Alex product documentation. Start by understanding how Alex interviews work, then dive into workflows, features, integrations, and the API.
 
 <Card
-  title="Start here"
+  title="Overview of Alex"
   icon="rocket"
-  href="/quickstart"
+  href="/welcome"
   horizontal
 >
-  Follow our three step quickstart guide.
+  High-level overview of Alex and links into tutorials, features, technical setup, and API integrations.
 </Card>
 
-## Make it yours
-
-Design a docs site that looks great and empowers your users.
+## Core features
 
 <Columns cols={2}>
   <Card
-    title="Edit locally"
-    icon="pen-to-square"
-    href="/development"
+    title="Create an AI interview"
+    icon="phone"
+    href="/interviews/create"
   >
-    Edit your docs locally and preview them in real time.
+    Learn how to create interviews from a job description, configure questions, grading criteria, tags, and advanced settings.
   </Card>
   <Card
-    title="Customize your site"
-    icon="palette"
-    href="/essentials/settings"
+    title="Workflows"
+    icon="arrows-repeat"
+    href="/interviews/workflows"
   >
-    Customize the design and colors of your site to match your brand.
-  </Card>
-    <Card
-    title="Set up navigation"
-    icon="map"
-    href="/essentials/navigation"
-  >
-    Organize your docs to help users find what they need and succeed with your product.
+    Configure workflows that automate invitations, reminders, ATS updates, and notifications.
   </Card>
   <Card
-    title="API documentation"
-    icon="terminal"
-    href="/api-reference/introduction"
+    title="Resume Fit"
+    icon="file"
+    href="/interviews/resumefit"
   >
-    Auto-generate API documentation from OpenAPI specifications.
+    See how Resume Fit evaluates resumes against job requirements and how to configure thresholds and scoring rules.
+  </Card>
+  <Card
+    title="Cheat Detection"
+    icon="shield"
+    href="/interviews/cheatdetection"
+  >
+    Understand how Cheat Detection works, what behaviors it monitors, and how to interpret scores and flags.
+  </Card>
+  <Card
+    title="Ask Alex"
+    icon="comments"
+    href="/interviews/askalex"
+  >
+    Use Ask Alex to summarize reports, highlight key signals, and speed up candidate review.
   </Card>
 </Columns>
 
-## Create beautiful pages
-
-Everything you need to create world-class documentation.
+## Setup and integrations
 
 <Columns cols={2}>
   <Card
-    title="Write with MDX"
-    icon="pen-fancy"
-    href="/essentials/markdown"
+    title="Technical setup"
+    icon="gear"
+    href="/advanced/domains"
   >
-    Use MDX to style your docs pages.
+    Configure domains and SAML SSO so Alex matches your organization’s security and branding.
   </Card>
   <Card
-    title="Code samples"
-    icon="code"
-    href="/essentials/code"
+    title="Integrations overview"
+    icon="diagram-project"
+    href="/integrations/overview"
   >
-    Add sample code to demonstrate how to use your product.
+    Understand which ATS integrations are available and what automations they unlock.
   </Card>
   <Card
-    title="Images"
-    icon="image"
-    href="/essentials/images"
+    title="Auto Job Generation"
+    icon="circle-play"
+    href="/integrations/auto-generate"
   >
-    Display images and other media.
+    Automatically create jobs and interviews from new ATS requisitions.
   </Card>
   <Card
-    title="Reusable snippets"
-    icon="recycle"
-    href="/essentials/reusable-snippets"
+    title="Greenhouse, Lever, Bullhorn, Workday"
+    icon="right-left"
+    href="/integrations/greenhouse-quickstart"
   >
-    Write once and reuse across your docs.
+    Jump into quickstart guides for your ATS to connect Alex and start syncing candidates and interviews.
   </Card>
 </Columns>
 
-## Need inspiration?
+## API
 
 <Card
-  title="See complete examples"
-  icon="stars"
-  href="https://mintlify.com/customers"
+  title="API reference"
+  icon="terminal"
+  href="/api-reference/introduction"
 >
-  Browse our showcase of exceptional documentation sites.
+  Explore the Alex REST API, including authentication, webhooks, and endpoints for candidates, reports, and positions.
 </Card>
