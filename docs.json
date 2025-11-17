@@ -85,7 +85,7 @@
     "primary": {
       "type": "button",
       "label": "Get started",
-      "href": "/welcome"
+      "href": "https://docs.alex.com/welcome"
     }
   },
   "contextual": {
