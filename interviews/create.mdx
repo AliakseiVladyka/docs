@@ -1,11 +1,11 @@
 ---
 title: "Creating an AI interview"
-description: "Step-by-step guide to creating AI interviews in Alex, from job description input and templates to grading criteria, tags, and advanced settings."
+description: "Step-by-step guide to creating AI interviews in Sabina, from job description input and templates to grading criteria, tags, and advanced settings."
 ---
 
 ## Getting started
 
-There are several ways to create a new job and interview in Alex:
+There are several ways to create a new job and interview in Sabina:
 
 1. Open the **Jobs** page and click **Add Job** in the top-right corner.
 2. Choose the interview modality:
@@ -15,7 +15,7 @@ There are several ways to create a new job and interview in Alex:
 
 Depending on your subscription, you might see only one modality. If you prefer to build everything manually, you can skip ahead to the [Starting from scratch](#starting-from-scratch-and-ats-driven-creation) section.
 
-If you use an ATS and want Alex to automatically generate interviews based on new jobs, see [Auto Job Generation](/integrations/auto-generate).
+If you use an ATS and want Sabina to automatically generate interviews based on new jobs, see [Auto Job Generation](/integrations/auto-generate).
 
 ## Starting from a job description
 
@@ -30,7 +30,7 @@ You can optionally assign a **Template** here. Templates pre-fill the interview 
 After providing the JD:
 
 - Optionally add **Interview Creation Notes** (for example, “Emphasize analytical skills and stakeholder management.”).
-- Click **Generate** to have Alex create a draft interview.
+- Click **Generate** to have Sabina create a draft interview.
 
 ## Customizing the interview
 
@@ -54,10 +54,10 @@ You can refine the question list to match your process:
 
 ### Follow-up questions
 
-Follow-ups help Alex dig deeper when needed:
+Follow-ups help Sabina dig deeper when needed:
 
 - Expand a question and add one or more follow-ups.
-- Without instructions, Alex may or may not ask follow-ups depending on the completeness of the candidate’s answer.
+- Without instructions, Sabina may or may not ask follow-ups depending on the completeness of the candidate’s answer.
 - Limit follow-ups per question to keep the conversation focused.
 
 Best practice: Use follow-ups to clarify vague responses, explore examples in more detail, or branch the conversation based on how the candidate responds. Keep them short and targeted.
@@ -84,7 +84,7 @@ Best practice: Use follow-ups to clarify vague responses, explore examples in mo
 
 ## AI question suggestions
 
-Alex can propose additional questions based on the JD:
+Sabina can propose additional questions based on the JD:
 
 - Click **View suggestions**.
 - Skill categories appear automatically, derived from the JD (for example, Communication, Technical Skills).
@@ -102,13 +102,13 @@ or by entering your own prompt (for example, “Make questions more technical”
 
 ## Context
 
-The **Context** box gives Alex background about the role and company that it can reuse when candidates ask questions at the end of the interview.
+The **Context** box gives Sabina background about the role and company that it can reuse when candidates ask questions at the end of the interview.
 
 - Add high-level information you’re comfortable sharing with candidates.
-- Alex references this context when answering questions about the role and company.
+- Sabina references this context when answering questions about the role and company.
 
 <Warning>
-If you leave context empty, Alex will not ask if the candidate has questions at the end of the interview, to avoid sharing sensitive details directly from the JD.
+If you leave context empty, Sabina will not ask if the candidate has questions at the end of the interview, to avoid sharing sensitive details directly from the JD.
 </Warning>
 
 Recommended to include:
@@ -127,11 +127,11 @@ Avoid including:
 
 ## Grading criteria
 
-Alex uses grading criteria to score candidates’ answers:
+Sabina uses grading criteria to score candidates’ answers:
 
 - You can use automatically suggested criteria (derived from the JD) or add your own.
 - Each criterion represents a dimension (for example, communication, problem-solving, technical depth).
-- Detailed instructions for each criterion help Alex score more accurately.
+- Detailed instructions for each criterion help Sabina score more accurately.
 
 For each criterion you can:
 
@@ -149,36 +149,35 @@ For each criterion you can:
 
 Tags highlight specific traits or details in the report. They don’t change the candidate’s score, but they make it easier to filter and search.
 
-Alex can auto-generate tags based on interview content, or you can configure them manually.
+Sabina can auto-generate tags based on interview content, or you can configure them manually.
 
 ### Creating a new tag
 
 1. Click **Add Tag → Create New**.
 2. Name the tag (for example, “Work authorization”, “Sales experience”, “Location”).
 3. Choose a response format:
-   - **Text with options** – Add multiple choices; Alex picks the closest match.
+   - **Text with options** – Add multiple choices; Sabina picks the closest match.
    - **Freeform** – Open text, useful for things like current employer or city.
    - **Date** – For availability or start dates.
    - **Number** – For numeric answers like years of experience.
-4. Add instructions explaining what the tag represents and what Alex should look for.
+4. Add instructions explaining what the tag represents and what Sabina should look for.
 
-Tip: Each tag should correspond to at least one question in the interview. If you want Alex to extract something, make sure the interview includes a question that surfaces it.
+Tip: Each tag should correspond to at least one question in the interview. If you want Sabina to extract something, make sure the interview includes a question that surfaces it.
 
 ## Advanced settings
 
-Use advanced settings to fine-tune how Alex runs and evaluates interviews:
+Use advanced settings to fine-tune how Sabina runs and evaluates interviews:
 
-- **Additional interview instructions** – High-level guidance for Alex’s behavior (for example, keep the tone casual, move quickly if answers are short).
+- **Additional interview instructions** – High-level guidance for Sabina’s behavior (for example, keep the tone casual, move quickly if answers are short).
 - **Additional evaluation instructions** – Extra scoring guidance or a rubric (for example, how to handle incomplete answers or missing examples).
 - **Retakes** – Optionally allow candidates to retake the same interview.
 - **Calendar settings** – Define deadlines after which scheduling is no longer allowed.
 - **Form inputs (video only)** – Collect inputs like LinkedIn profile, phone number, or resume before starting the interview.
-- **Generate questions from resume** – Configure how many tailored questions Alex should create based on the candidate’s uploaded resume.
+- **Generate questions from resume** – Configure how many tailored questions Sabina should create based on the candidate’s uploaded resume.
 
 When you’re satisfied, click **Create** to save the interview.
 
 ## Starting from scratch and ATS-driven creation
 
 - **Starting from scratch** – Instead of starting with a JD, you can build an interview entirely manually by adding sections, questions, criteria, and tags yourself.
-- **Auto Job Generation from ATS** – If configured, new jobs in your ATS can automatically create corresponding jobs and interviews in Alex, using your default workflow and templates.
-
+- **Auto Job Generation from ATS** – If configured, new jobs in your ATS can automatically create corresponding jobs and interviews in Sabina, using your default workflow and templates.

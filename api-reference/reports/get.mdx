@@ -1,6 +1,6 @@
 ---
 title: "Get reports"
-description: "Endpoint for listing completed Alex interview reports, with filtering options and full report structure."
+description: "Endpoint for listing completed Sabina interview reports, with filtering options and full report structure."
 ---
 
 ## Get reports
@@ -35,7 +35,7 @@ X-API-Key: <api-key>
 
 ```bash
 curl --request GET \
-  --url https://api.alex.com/v1/api/reports \
+  --url https://api.sabina.com/v1/api/reports \
   --header 'X-API-Key: <api-key>'
 ```
 
@@ -91,4 +91,3 @@ On success, returns a JSON array of report objects, for example:
 - `timeCompleted` – UNIX epoch timestamp (seconds) when the interview completed.
 - `videoUrl` – URL to an interview video recording (if available).
 - `pdfUrl` – URL to a downloadable PDF version of the report.
-

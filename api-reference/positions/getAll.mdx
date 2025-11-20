@@ -1,11 +1,11 @@
 ---
 title: "Get positions"
-description: "Endpoint for listing positions configured in Alex, including position IDs and names."
+description: "Endpoint for listing positions configured in Sabina, including position IDs and names."
 ---
 
 ## Get positions
 
-Returns a list of positions from Alex.
+Returns a list of positions from Sabina.
 
 - **Method:** `GET`
 - **Path:** `/positions`
@@ -29,7 +29,7 @@ X-API-Key: <api-key>
 
 ```bash
 curl --request GET \
-  --url https://api.alex.com/v1/api/positions \
+  --url https://api.sabina.com/v1/api/positions \
   --header 'X-API-Key: <api-key>'
 ```
 
@@ -52,4 +52,3 @@ On success, returns a JSON array of position objects:
 - `name` – The human-readable name or title of the position.
 
 Use these IDs when filtering other endpoints (for example, **Get candidates** or **Get reports**).
-

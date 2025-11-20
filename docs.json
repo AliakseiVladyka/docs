@@ -1,7 +1,7 @@
 {
   "$schema": "https://mintlify.com/docs.json",
   "theme": "mint",
-  "name": "Alex Docs",
+  "name": "Sabina Docs",
   "colors": {
     "primary": "#16A34A",
     "light": "#07C983",
@@ -20,7 +20,7 @@
             ]
           },
           {
-            "group": "Alex interviews",
+            "group": "Sabina interviews",
             "pages": [
               "interviews/create",
               "interviews/workflows",
@@ -42,11 +42,7 @@
             "group": "Integrations",
             "pages": [
               "integrations/overview",
-              "integrations/auto-generate",
-              "integrations/greenhouse-quickstart",
-              "integrations/lever-quickstart",
-              "integrations/bullhorn-quickstart",
-              "integrations/workday-quickstart"
+              "integrations/auto-generate"
             ]
           }
         ]
@@ -79,13 +75,13 @@
     "links": [
       {
         "label": "Support",
-        "href": "mailto:support@alex.com"
+        "href": "mailto:support@sabina.com"
       }
     ],
     "primary": {
       "type": "button",
       "label": "Get started",
-      "href": "https://docs.alex.com/welcome"
+      "href": "https://docs.sabina.com/welcome"
     }
   },
   "contextual": {

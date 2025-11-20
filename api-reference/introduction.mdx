@@ -1,12 +1,12 @@
 ---
 title: "API introduction"
-description: "Overview of the Alex REST API, including base URL, authentication, and HTTP response codes."
+description: "Overview of the Sabina REST API, including base URL, authentication, and HTTP response codes."
 icon: "terminal"
 ---
 
 ## Introduction
 
-The Alex API is a RESTful HTTP API that lets you programmatically access candidates, reports, and positions, and receive webhook notifications.
+The Sabina API is a RESTful HTTP API that lets you programmatically access candidates, reports, and positions, and receive webhook notifications.
 
 This page covers the base URL, authentication, and response codes used across all endpoints.
 
@@ -15,16 +15,16 @@ This page covers the base URL, authentication, and response codes used across al
 All API requests must be made over HTTPS to the following base URL:
 
 ```text
-https://api.alex.com/v1/api
+https://api.sabina.com/v1/api
 ```
 
 All endpoints documented under the API reference section are relative to this base.
 
 ## Authentication
 
-Alex uses an API key for authentication.
+Sabina uses an API key for authentication.
 
-- Obtain an API key from your Alex dashboard.
+- Obtain an API key from your Sabina dashboard.
 - Include it on every request with the header:
 
 ```http
@@ -37,7 +37,7 @@ Keep your API key secret. Do not embed it in client-side code or public reposito
 
 ## Response codes
 
-Alex uses standard HTTP status codes:
+Sabina uses standard HTTP status codes:
 
 - **2xx – Request succeeded.** Example:
   - `200 OK` – The request was successful and data is returned.
@@ -46,6 +46,6 @@ Alex uses standard HTTP status codes:
   - `401 Unauthorized` – Missing or invalid API key.
   - `404 Not Found` – The requested resource does not exist.
 - **5xx – Server-side error.** Example:
-  - `500 Internal Server Error` – An unexpected error occurred on Alex’s side.
+  - `500 Internal Server Error` – An unexpected error occurred on Sabina’s side.
 
 Check the response body for additional error details where provided.

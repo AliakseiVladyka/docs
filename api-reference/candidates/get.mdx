@@ -1,11 +1,11 @@
 ---
 title: "Get candidates"
-description: "Endpoint for listing candidates in Alex with optional filtering by candidate, email, or position."
+description: "Endpoint for listing candidates in Sabina with optional filtering by candidate, email, or position."
 ---
 
 ## Get candidates
 
-Returns a list of candidates from Alex. You can optionally filter by `candidateId`, `email`, or `positionId`.
+Returns a list of candidates from Sabina. You can optionally filter by `candidateId`, `email`, or `positionId`.
 
 - **Method:** `GET`
 - **Path:** `/candidates`
@@ -35,7 +35,7 @@ X-API-Key: <api-key>
 
 ```bash
 curl --request GET \
-  --url https://api.alex.com/v1/api/candidates \
+  --url https://api.sabina.com/v1/api/candidates \
   --header 'X-API-Key: <api-key>'
 ```
 
@@ -57,11 +57,10 @@ On success, returns a JSON array of candidate objects:
 
 ### Fields
 
-- `candidateId` – Unique ID of the candidate within Alex.
+- `candidateId` – Unique ID of the candidate within Sabina.
 - `email` – Candidate’s email address.
 - `firstName` – Candidate’s first name.
 - `lastName` – Candidate’s last name.
 - `resumeUrl` – Public or signed URL pointing to the candidate’s resume, if present.
 
 Error responses use standard HTTP status codes (for example, `400` for invalid input).
-

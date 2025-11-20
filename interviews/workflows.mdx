@@ -1,6 +1,6 @@
 ---
 title: "Workflows"
-description: "How to configure Alex workflows to automate invitations, reminders, status updates, and decisions for candidates across ATS and non-ATS flows."
+description: "How to configure Sabina workflows to automate invitations, reminders, status updates, and decisions for candidates across ATS and non-ATS flows."
 ---
 
 ## Overview
@@ -15,9 +15,9 @@ Workflows define the end-to-end journey a candidate takes, from their first invi
 
 ## ATS vs. non-ATS workflows
 
-- **Without ATS integration** – You’ll see a single branch. This branch represents candidates invited directly from Alex (for example, via invite link or **Invite Candidates** button).
+- **Without ATS integration** – You’ll see a single branch. This branch represents candidates invited directly from Sabina (for example, via invite link or **Invite Candidates** button).
 - **With ATS integration** – You’ll see two branches:
-  - Left branch: Candidates invited directly from Alex or via manually shared links.
+  - Left branch: Candidates invited directly from Sabina or via manually shared links.
   - Right branch: Candidates invited automatically from your ATS.
 
 Each branch has its own configuration so you can personalize the journey based on candidate source.
@@ -30,13 +30,13 @@ Use the steps in the workflow builder to configure each stage of the candidate j
 
 #### Blackout period (phone interviews only)
 
-The blackout period prevents Alex from calling or texting candidates during off-hours:
+The blackout period prevents Sabina from calling or texting candidates during off-hours:
 
-- Alex only sends initial calls or texts during your configured window (shown in green).
+- Sabina only sends initial calls or texts during your configured window (shown in green).
 - The candidate’s local timezone is inferred from their phone’s area code.
 - If someone applies overnight, their invite waits until the next available window.
 
-Note: If candidates text Alex themselves, Alex will respond right away. The blackout period only affects outbound calls and texts.
+Note: If candidates text Sabina themselves, Sabina will respond right away. The blackout period only affects outbound calls and texts.
 
 #### Shared notifications for completed interviews (Bullhorn only)
 
@@ -150,30 +150,30 @@ You can configure automatic ATS updates when interviews complete:
 
 ### 6. Decision (optional)
 
-Use the **Decision** step to automate what happens when you shortlist or reject candidates in Alex:
+Use the **Decision** step to automate what happens when you shortlist or reject candidates in Sabina:
 
 - Optionally send email or SMS notifications when candidates are shortlisted or rejected.
 - Customize templates to fit your tone and process.
 
 For Bullhorn users:
 
-- Alex can create note actions or update fields when candidates are shortlisted or rejected, so the ATS reflects the decision made in Alex.
+- Sabina can create note actions or update fields when candidates are shortlisted or rejected, so the ATS reflects the decision made in Sabina.
 
 Important limitations:
 
-- For ATSs other than Bullhorn, decisions made in the ATS do not sync back to Alex.
-- Decisions made in Alex can trigger notifications, but not every ATS supports mirrored status updates.
+- For ATSs other than Bullhorn, decisions made in the ATS do not sync back to Sabina.
+- Decisions made in Sabina can trigger notifications, but not every ATS supports mirrored status updates.
 
 ## Important note on workflows
 
-If you manually copy and send interview or scheduling links outside Alex (for example, a bare link in email or chat), the candidate bypasses parts of your workflow. That means:
+If you manually copy and send interview or scheduling links outside Sabina (for example, a bare link in email or chat), the candidate bypasses parts of your workflow. That means:
 
 - They may not receive automated reminders or completion emails.
 - ATS updates may not run as expected.
 
 To keep everything in sync:
 
-- Add candidates via the **Invite Candidates** button in Alex, or
+- Add candidates via the **Invite Candidates** button in Sabina, or
 - Route them through ATS-based automations.
 
 If you need to share links during outbound outreach, enabling **Auto Match Candidates** ensures that completed interviews still create candidate records in Bullhorn and keep your system of record accurate.
@@ -181,4 +181,3 @@ If you need to share links during outbound outreach, enabling **Auto Match Candi
 ## Stay tuned
 
 Workflows are evolving quickly. Expect additional steps, options, and integrations to appear over time. Check this page periodically for the latest capabilities and configuration tips.
-
